@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>Android通用流行框架大全 | clawpo&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Android通用流行框架大全">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android通用流行框架大全">
+<meta property="og:url" content="http://clawpo.github.io/2016/05/09/2016/Android_Universal_framework.html">
+<meta property="og:site_name" content="clawpo's Blog">
+<meta property="og:description" content="Android通用流行框架大全">
+<meta property="og:image" content="http://i.imgur.com/xJnVaP4.png">
+<meta property="og:updated_time" content="2016-05-09T06:44:21.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android通用流行框架大全">
+<meta name="twitter:description" content="Android通用流行框架大全">
+<meta name="twitter:image" content="http://i.imgur.com/xJnVaP4.png">
+  
+    <link rel="alternative" href="/atom.xml" title="clawpo&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://tp4.sinaimg.cn/1678286327/180/5667903511/1" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Claw Po</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">我就是最爱蜡笔小新的大射手座！</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/categories/life/">随笔</a></li>
+				        
+							<li><a href="/">关于</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/clawpo/" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/1678286327/" title="weibo">weibo</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/geng-xiao-tai" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/80后/" style="font-size: 10px;">80后</a> <a href="/tags/LeanCloud/" style="font-size: 10px;">LeanCloud</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/android-studio/" style="font-size: 10px;">android studio</a> <a href="/tags/apache/" style="font-size: 10px;">apache</a> <a href="/tags/atom/" style="font-size: 10px;">atom</a> <a href="/tags/ease/" style="font-size: 10px;">ease</a> <a href="/tags/eclipse/" style="font-size: 10px;">eclipse</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/google-cloud/" style="font-size: 12.5px;">google cloud</a> <a href="/tags/hellocharts/" style="font-size: 10px;">hellocharts</a> <a href="/tags/java/" style="font-size: 17.5px;">java</a> <a href="/tags/junit/" style="font-size: 10px;">junit</a> <a href="/tags/libs/" style="font-size: 10px;">libs</a> <a href="/tags/linux/" style="font-size: 12.5px;">linux</a> <a href="/tags/live/" style="font-size: 10px;">live</a> <a href="/tags/longboard/" style="font-size: 15px;">longboard</a> <a href="/tags/lru/" style="font-size: 10px;">lru</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/mvp/" style="font-size: 10px;">mvp</a> <a href="/tags/post/" style="font-size: 12.5px;">post</a> <a href="/tags/retrofit/" style="font-size: 10px;">retrofit</a> <a href="/tags/rxjava/" style="font-size: 10px;">rxjava</a> <a href="/tags/sdk/" style="font-size: 10px;">sdk</a> <a href="/tags/squareup/" style="font-size: 10px;">squareup</a> <a href="/tags/sykapao/" style="font-size: 10px;">sykapao</a> <a href="/tags/volley/" style="font-size: 12.5px;">volley</a> <a href="/tags/zentao/" style="font-size: 10px;">zentao</a> <a href="/tags/图表/" style="font-size: 10px;">图表</a> <a href="/tags/环信/" style="font-size: 10px;">环信</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，坚持寻觅真爱的孩子…</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Claw Po</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://tp4.sinaimg.cn/1678286327/180/5667903511/1" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Claw Po</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">我就是最爱蜡笔小新的大射手座！</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/categories/life/">随笔</a></li>
+		        
+					<li><a href="/">关于</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/clawpo/" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/1678286327/" title="weibo">weibo</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/geng-xiao-tai" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-2016/Android_Universal_framework" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/09/2016/Android_Universal_framework.html" class="article-date">
+  	<time datetime="2016-05-09T06:08:00.000Z" itemprop="datePublished">2016-05-09</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Android通用流行框架大全
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/android/">android</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Android通用流行框架大全</p>
+<a id="more"></a>
+<p><img src="http://i.imgur.com/xJnVaP4.png" alt="android_image"></p>
+<h2 id="1-缓存"><a href="#1-缓存" class="headerlink" title="1. 缓存"></a>1. 缓存</h2><table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="https://github.com/JakeWharton/DiskLruCache" target="_blank" rel="external">DiskLruCache</a></td>
+<td style="text-align:left">Java实现基于LRU的磁盘缓存</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-图片加载"><a href="#2-图片加载" class="headerlink" title="2. 图片加载"></a>2. 图片加载</h2><table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="https://github.com/nostra13/Android-Universal-Image-Loader" target="_blank" rel="external">Android Universal Image Loader</a></td>
+<td style="text-align:left">一个强大的加载，缓存，展示图片的库</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/square/picasso" target="_blank" rel="external">Picasso</a></td>
+<td style="text-align:left">一个强大的图片下载与缓存的库</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/facebook/fresco" target="_blank" rel="external">Fresco</a></td>
+<td style="text-align:left">一个用于管理图像和他们使用的内存的库</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/bumptech/glide" target="_blank" rel="external">Glide</a></td>
+<td style="text-align:left">一个图片加载和缓存的库</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-图片处理"><a href="#3-图片处理" class="headerlink" title="3. 图片处理"></a>3. 图片处理</h2><table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="https://github.com/wasabeef/picasso-transformations" target="_blank" rel="external">Picasso-transformations</a></td>
+<td style="text-align:left">一个为Picasso提供多种图片变换的库</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/wasabeef/glide-transformations" target="_blank" rel="external">Glide-transformations</a></td>
+<td style="text-align:left">一个为Glide提供多种图片变换的库</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/CyberAgent/android-gpuimage" target="_blank" rel="external">Android-gpuimage</a></td>
+<td style="text-align:left">基于OpenGL的Android过滤器</td>
+</tr>
+</tbody>
+</table>
+<h2 id="4-网络请求"><a href="#4-网络请求" class="headerlink" title="4. 网络请求"></a>4. 网络请求</h2><table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="https://github.com/loopj/android-async-http" target="_blank" rel="external">Android Async HTTP</a></td>
+<td style="text-align:left">Android异步HTTP库</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/koush/AndroidAsync" target="_blank" rel="external">AndroidAsync</a></td>
+<td style="text-align:left">异步Socket，HTTP(客户端+服务器)，WebSocket，和socket.io库。基于NIO而不是线程。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/square/okhttp" target="_blank" rel="external">OkHttp</a></td>
+<td style="text-align:left">一个Http与Http/2的客户端</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/square/retrofit" target="_blank" rel="external">Retrofit</a></td>
+<td style="text-align:left">类型安全的Http客户端</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://android.googlesource.com/platform/frameworks/volley" target="_blank" rel="external">Volley</a></td>
+<td style="text-align:left">Google推出的Android异步网络请求框架和图片加载框架</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-网络解析"><a href="#5-网络解析" class="headerlink" title="5. 网络解析"></a>5. 网络解析</h2><table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="https://github.com/google/gson" target="_blank" rel="external">Gson</a></td>
+<td style="text-align:left">一个Java序列化/反序列化库，可以将JSON和java对象互相转换</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/codehaus/jackson" target="_blank" rel="external">Jackson</a></td>
+<td style="text-align:left">Jackson可以轻松地将Java对象转换成json对象和xml文档，同样也可以将json、xml转换成Java对象</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/alibaba/fastjson" target="_blank" rel="external">Fastjson</a></td>
+<td style="text-align:left">Java上一个快速的JSON解析器/生成器</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://sourceforge.net/projects/htmlparser/" target="_blank" rel="external">HtmlPaser</a></td>
+<td style="text-align:left">一种用来解析单个独立html或嵌套html的方式</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/jhy/jsoup" target="_blank" rel="external">Jsoup</a></td>
+<td style="text-align:left">一个以最好的DOM，CSS和jQuery解析html的库</td>
+</tr>
+</tbody>
+</table>
+<h2 id="6-数据库"><a href="#6-数据库" class="headerlink" title="6. 数据库"></a>6. 数据库</h2><table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="https://sourceforge.net/projects/ormlite/files/releases/com/j256/ormlite/" target="_blank" rel="external">OrmLite</a></td>
+<td style="text-align:left">JDBC和Android的轻量级ORM java包</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/satyan/sugar" target="_blank" rel="external">Sugar</a></td>
+<td style="text-align:left">用超级简单的方法处理Android数据库</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/greenrobot/greenDAO" target="_blank" rel="external">GreenDAO</a></td>
+<td style="text-align:left">一种轻快地将对象映射到SQLite数据库的ORM解决方案</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/pardom/ActiveAndroid" target="_blank" rel="external">ActiveAndroid</a></td>
+<td style="text-align:left">以活动记录方式为Android SQLite提供持久化</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/square/sqlbrite" target="_blank" rel="external">SQLBrite</a></td>
+<td style="text-align:left">SQLiteOpenHelper 和ContentResolver的轻量级包装</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/jhy/jsoup" target="_blank" rel="external">Realm</a></td>
+<td style="text-align:left">移动数据库：一个SQLite和ORM的替换品</td>
+</tr>
+</tbody>
+</table>
+<h2 id="7-依赖注入"><a href="#7-依赖注入" class="headerlink" title="7. 依赖注入"></a>7. 依赖注入</h2><table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="https://github.com/JakeWharton/butterknife" target="_blank" rel="external">ButterKnife</a></td>
+<td style="text-align:left">将Android视图和回调方法绑定到字段和方法上</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/google/dagger" target="_blank" rel="external">Dagger2</a></td>
+<td style="text-align:left">一个Android和java快速依赖注射器</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/excilys/androidannotations" target="_blank" rel="external">AndroidAnotations</a></td>
+<td style="text-align:left">快速安卓开发,易于维护</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/roboguice/roboguice" target="_blank" rel="external">RoboGuice</a></td>
+<td style="text-align:left">Android平台的Google Guice</td>
+</tr>
+</tbody>
+</table>
+<h2 id="8-图表"><a href="#8-图表" class="headerlink" title="8. 图表"></a>8. 图表</h2><table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="https://github.com/diogobernardino/WilliamChart" target="_blank" rel="external">WilliamChart</a></td>
+<td style="text-align:left">创建图表的Android库</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/lecho/hellocharts-android" target="_blank" rel="external">HelloCharts</a></td>
+<td style="text-align:left">兼容到API8的Android图表库</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/PhilJay/MPAndroidChart" target="_blank" rel="external">MPAndroidChart</a></td>
+<td style="text-align:left">一个强大的Android图表视图/图形库</td>
+</tr>
+</tbody>
+</table>
+<h2 id="9-后台处理"><a href="#9-后台处理" class="headerlink" title="9. 后台处理"></a>9. 后台处理</h2><table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="https://github.com/square/tape" target="_blank" rel="external">Tape</a></td>
+<td style="text-align:left">一个轻快的，事务性的，基于文件的FIFO的库</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/yigit/android-priority-jobqueue" target="_blank" rel="external">Android Priority Job Queue</a></td>
+<td style="text-align:left">一个专门为Android轻松调度任务的工作队列</td>
+</tr>
+</tbody>
+</table>
+<h2 id="10-事件总线"><a href="#10-事件总线" class="headerlink" title="10. 事件总线"></a>10. 事件总线</h2><table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="https://github.com/greenrobot/EventBus" target="_blank" rel="external">EventBus</a></td>
+<td style="text-align:left">安卓优化的事件总线，简化了活动、片段、线程、服务等的通信</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/square/otto" target="_blank" rel="external">Otto</a></td>
+<td style="text-align:left">一个基于Guava的增强的事件总线</td>
+</tr>
+</tbody>
+</table>
+<h2 id="11-响应式编程"><a href="#11-响应式编程" class="headerlink" title="11. 响应式编程"></a>11. 响应式编程</h2><table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="https://github.com/ReactiveX/RxJava" target="_blank" rel="external">RxJava</a></td>
+<td style="text-align:left">JVM上的响应式扩展</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/ReactiveX/RxJavaJoins" target="_blank" rel="external">RxJavaJoins</a></td>
+<td style="text-align:left">为RxJava提供Joins操作</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/ReactiveX/RxAndroid" target="_blank" rel="external">RxAndroid</a></td>
+<td style="text-align:left">Android上的响应式扩展，在RxJava基础上添加了Android线程调度</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/JakeWharton/RxBinding" target="_blank" rel="external">RxBinding</a></td>
+<td style="text-align:left">提供用RxJava绑定Android UI的API</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/google/agera" target="_blank" rel="external">Agera</a></td>
+<td style="text-align:left">Android上的响应式编程</td>
+</tr>
+</tbody>
+</table>
+<h2 id="12-Log框架"><a href="#12-Log框架" class="headerlink" title="12. Log框架"></a>12. Log框架</h2><table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="https://github.com/orhanobut/logger" target="_blank" rel="external">Logger</a></td>
+<td style="text-align:left">简单，漂亮，强大的Android日志工具</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/JakeWharton/hugo" target="_blank" rel="external">Hugo</a></td>
+<td style="text-align:left">在调试版本上注解的触发方法进行日志记录</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/JakeWharton/timber" target="_blank" rel="external">Timber</a></td>
+<td style="text-align:left">一个小的，可扩展的日志工具</td>
+</tr>
+</tbody>
+</table>
+<h2 id="13-测试框架"><a href="#13-测试框架" class="headerlink" title="13. 测试框架"></a>13. 测试框架</h2><table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="https://github.com/mockito/mockito" target="_blank" rel="external">Mockito</a></td>
+<td style="text-align:left">Java编写的Mocking单元测试框架</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/RobotiumTech/robotium" target="_blank" rel="external">Robotium</a></td>
+<td style="text-align:left">Android UI 测试</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/xtremelabs/robolectric" target="_blank" rel="external">Robolectric</a></td>
+<td style="text-align:left">Android单元测试框架</td>
+</tr>
+</tbody>
+</table>
+<p><strong> Android自带很多测试工具：JUnit，Monkeyrunner，UiAutomator，Espresso等 </strong></p>
+<h2 id="14-调试框架"><a href="#14-调试框架" class="headerlink" title="14. 调试框架"></a>14. 调试框架</h2><table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="https://github.com/facebook/stetho" target="_blank" rel="external">Stetho</a></td>
+<td style="text-align:left">调试Android应用的桥梁，使得可以利用Chrome开发者工具进行调试</td>
+</tr>
+</tbody>
+</table>
+<h2 id="15-性能优化"><a href="#15-性能优化" class="headerlink" title="15. 性能优化"></a>15. 性能优化</h2><table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="https://github.com/square/leakcanary" target="_blank" rel="external">LeakCanary</a></td>
+<td style="text-align:left">内存泄漏检测工具</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/ACRA/acra" target="_blank" rel="external">ACRA</a></td>
+<td style="text-align:left">Android应用程序崩溃报告</td>
+</tr>
+</tbody>
+</table>
+<p>原文章链接：<a href="https://segmentfault.com/a/1190000005073746" target="_blank" rel="external">https://segmentfault.com/a/1190000005073746</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/06/06/2016/volley_lrucache_disklrucache.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          基于Volley和DiskLruCache的缓存策略
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/05/04/2016/maxiang.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2016/Android_Universal_framework" data-title="Android通用流行框架大全" data-url="http://clawpo.github.io/2016/05/09/2016/Android_Universal_framework.html"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"clawpo"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 Claw Po
+    	</div>
+      <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      本站总访问量<span id="busuanzi_value_site_pv"></span>次 | 本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+        <div>
+            友情链接：
+            <a href="http://sykapao.github.io/" target="_blank">sykapao</a>
+            <a href="http://mycloudream.github.io/" target="_blank">cloudream</a>
+        </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

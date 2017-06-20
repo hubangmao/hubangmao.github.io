@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>使用LeanCloud查找附近的人 | clawpo&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="移动云平台，一个听起来就很高大上的名字，那他具体是什么呢？一开始是在某个SDK中看到里面的用户管理使用的是Parse，好奇之下就搜索了一番，发现如下简介
+
+Parse是由YC孵化出来的、专为移动应用提供后台服务的云计算平台，为开发者包办繁琐的后台服务，让开发者只需专注于具体的开发工作。它提供任意数据保存、照片或其它文件存储、发送推送通知、创建用户帐号、使用地理位置数据、添加Facebook/Twi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用LeanCloud查找附近的人">
+<meta property="og:url" content="http://clawpo.github.io/2016/11/23/2016/lean_cloud.html">
+<meta property="og:site_name" content="clawpo's Blog">
+<meta property="og:description" content="移动云平台，一个听起来就很高大上的名字，那他具体是什么呢？一开始是在某个SDK中看到里面的用户管理使用的是Parse，好奇之下就搜索了一番，发现如下简介
+
+Parse是由YC孵化出来的、专为移动应用提供后台服务的云计算平台，为开发者包办繁琐的后台服务，让开发者只需专注于具体的开发工作。它提供任意数据保存、照片或其它文件存储、发送推送通知、创建用户帐号、使用地理位置数据、添加Facebook/Twi">
+<meta property="og:image" content="https://leancloud.cn/docs/images/testobject_saved.png">
+<meta property="og:image" content="http://7xthzp.com1.z0.glb.clouddn.com/leancloud-1.png">
+<meta property="og:image" content="http://7xthzp.com1.z0.glb.clouddn.com/leancloud-2.png">
+<meta property="og:image" content="http://7xthzp.com1.z0.glb.clouddn.com/leancloud-3.png">
+<meta property="og:updated_time" content="2016-11-24T00:46:50.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用LeanCloud查找附近的人">
+<meta name="twitter:description" content="移动云平台，一个听起来就很高大上的名字，那他具体是什么呢？一开始是在某个SDK中看到里面的用户管理使用的是Parse，好奇之下就搜索了一番，发现如下简介
+
+Parse是由YC孵化出来的、专为移动应用提供后台服务的云计算平台，为开发者包办繁琐的后台服务，让开发者只需专注于具体的开发工作。它提供任意数据保存、照片或其它文件存储、发送推送通知、创建用户帐号、使用地理位置数据、添加Facebook/Twi">
+<meta name="twitter:image" content="https://leancloud.cn/docs/images/testobject_saved.png">
+  
+    <link rel="alternative" href="/atom.xml" title="clawpo&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://tp4.sinaimg.cn/1678286327/180/5667903511/1" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Claw Po</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">我就是最爱蜡笔小新的大射手座！</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/categories/life/">随笔</a></li>
+				        
+							<li><a href="/">关于</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/clawpo/" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/1678286327/" title="weibo">weibo</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/geng-xiao-tai" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/80后/" style="font-size: 10px;">80后</a> <a href="/tags/LeanCloud/" style="font-size: 10px;">LeanCloud</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/android-studio/" style="font-size: 10px;">android studio</a> <a href="/tags/apache/" style="font-size: 10px;">apache</a> <a href="/tags/atom/" style="font-size: 10px;">atom</a> <a href="/tags/ease/" style="font-size: 10px;">ease</a> <a href="/tags/eclipse/" style="font-size: 10px;">eclipse</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/google-cloud/" style="font-size: 12.5px;">google cloud</a> <a href="/tags/hellocharts/" style="font-size: 10px;">hellocharts</a> <a href="/tags/java/" style="font-size: 17.5px;">java</a> <a href="/tags/junit/" style="font-size: 10px;">junit</a> <a href="/tags/libs/" style="font-size: 10px;">libs</a> <a href="/tags/linux/" style="font-size: 12.5px;">linux</a> <a href="/tags/live/" style="font-size: 10px;">live</a> <a href="/tags/longboard/" style="font-size: 15px;">longboard</a> <a href="/tags/lru/" style="font-size: 10px;">lru</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/mvp/" style="font-size: 10px;">mvp</a> <a href="/tags/post/" style="font-size: 12.5px;">post</a> <a href="/tags/retrofit/" style="font-size: 10px;">retrofit</a> <a href="/tags/rxjava/" style="font-size: 10px;">rxjava</a> <a href="/tags/sdk/" style="font-size: 10px;">sdk</a> <a href="/tags/squareup/" style="font-size: 10px;">squareup</a> <a href="/tags/sykapao/" style="font-size: 10px;">sykapao</a> <a href="/tags/volley/" style="font-size: 12.5px;">volley</a> <a href="/tags/zentao/" style="font-size: 10px;">zentao</a> <a href="/tags/图表/" style="font-size: 10px;">图表</a> <a href="/tags/环信/" style="font-size: 10px;">环信</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，坚持寻觅真爱的孩子…</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Claw Po</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://tp4.sinaimg.cn/1678286327/180/5667903511/1" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Claw Po</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">我就是最爱蜡笔小新的大射手座！</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/categories/life/">随笔</a></li>
+		        
+					<li><a href="/">关于</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/clawpo/" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/1678286327/" title="weibo">weibo</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/geng-xiao-tai" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-2016/lean_cloud" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/11/23/2016/lean_cloud.html" class="article-date">
+  	<time datetime="2016-11-23T07:40:00.000Z" itemprop="datePublished">2016-11-23</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      使用LeanCloud查找附近的人
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LeanCloud/">LeanCloud</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/LeanCloud/">LeanCloud</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>移动云平台，一个听起来就很高大上的名字，那他具体是什么呢？<br>一开始是在某个SDK中看到里面的用户管理使用的是Parse，好奇之下就搜索了一番，发现如下简介</p>
+<blockquote>
+<p>Parse是由YC孵化出来的、专为移动应用提供后台服务的云计算平台，为开发者包办繁琐的后台服务，让开发者只需专注于具体的开发工作。它提供任意数据保存、照片或其它文件存储、发送推送通知、创建用户帐号、使用地理位置数据、添加Facebook/Twitter帐号登陆等等服务…<a href="http://36kr.com/p/130095.html" target="_blank" rel="external">[引用来源]</a></p>
+</blockquote>
+<a id="more"></a>
+<p>但是现在已经被Facebook收购了，还有一些其他的原因，就没有深究，然后去看了下国内类似的平台，还真发现了好几个(原谅我孤陋寡闻吧)，比较之下选择了使用LeanCloud。(别问我为什么，我是抽签选择的)<br>再来看一下LeanCloud的首页介绍</p>
+<blockquote>
+<p>和应用服务器、存储服务器说再见<br>再也不用租服务器，也不用写后端代码了。<br>LeanCloud 提供一站式后端云服务，从数据存储、实时聊天、消息推送到移动统计，涵盖应用开发的多方面后端需求。</p>
+</blockquote>
+<p>恩，看样子还不错，那我们来具体的试用一下吧。</p>
+<h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><p>我们先订一个小目标：</p>
+<ol>
+<li>使用LeanCloud和百度LBS结合开发一个查找附近的人的Demo，所有数据保存在LeanCloud中。</li>
+<li>具体的逻辑为，开启应用，登录或者注册，如果当前存在登录用户则进入主页；</li>
+<li>主页显示进入附近的人和退出登录的入口；</li>
+<li>进入附近的人则从LeanCloud中根据当然登录用户的定位获取距离最近的10个用户；</li>
+<li>退出则清空当前登录用户的信息。</li>
+</ol>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>首先需要在<a href="https://leancloud.cn" target="_blank" rel="external">LeanCloud</a>和<a href="http://lbsyun.baidu.com" target="_blank" rel="external">百度LBS</a>上面注册账号并创建一个应用，后面需要用到。</p>
+<h2 id="新建工程"><a href="#新建工程" class="headerlink" title="新建工程"></a>新建工程</h2><h4 id="配置LeanCloud"><a href="#配置LeanCloud" class="headerlink" title="配置LeanCloud"></a>配置LeanCloud</h4><p>新建一个android工程，然后参考<a href="https://leancloud.cn/docs/sdk_setup-android.html" target="_blank" rel="external">LeanCloud android SDK安装指南</a>配置一下相关的依赖。<br>点击 Run 运行调试，真机和虚拟机均可。<br>然后打开 控制台 &gt; 存储 &gt; 数据 &gt; TestObject，如果看到如下内容，说明 SDK 已经正确地执行了上述代码，安装完毕。<br><img src="https://leancloud.cn/docs/images/testobject_saved.png" alt="testobject_saved"></p>
+<h4 id="配置百度LBS"><a href="#配置百度LBS" class="headerlink" title="配置百度LBS"></a>配置百度LBS</h4><p>参考<a href="http://lbsyun.baidu.com/index.php?title=android-locsdk" target="_blank" rel="external">百度LBS android定位SDK</a>配置，</p>
+<ol>
+<li><a href="http://lbsyun.baidu.com/index.php?title=android-locsdk/guide/key" target="_blank" rel="external">申请密钥</a>，直接安装官方的步骤就可以拿到了。</li>
+<li><a href="http://lbsyun.baidu.com/index.php?title=android-locsdk/guide/buildprojec" target="_blank" rel="external">配置环境</a>，推荐直接将Demo中的libs包拷贝到你的项目中，其中httpmime-4.1.2.jar和IndoorscapeAlbumPlugin.jar不需要，可以删除。设置AndroidManifest.xml中的service、声明权限以及设置AcessKey。</li>
+<li><a href="http://lbsyun.baidu.com/index.php?title=android-locsdk/guide/getloc" target="_blank" rel="external">获取位置</a>，推荐直接将Demo中的LocationService文件拿来用，测试定位是否可用的话，可以先使用LocationActivity.java文件来进行，稍后会将其中的代码整理到其他逻辑中。</li>
+</ol>
+<h2 id="创建用户实体类"><a href="#创建用户实体类" class="headerlink" title="创建用户实体类"></a>创建用户实体类</h2><p>用户实体类User使用的是LeanCloud中默认的用户类型AVUser的子类，并添加了位置字段，代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> <span class="keyword">extends</span> <span class="title">AVUser</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String USER_POINT = <span class="string">"user_point"</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> AVGeoPoint <span class="title">getUserPoint</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> getAVGeoPoint(USER_POINT);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setUserPoint</span><span class="params">(AVGeoPoint point)</span></span>&#123;</span><br><span class="line">        put(USER_POINT,point);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当用户子类化 AVUser 后，如果希望以后查询 AVUser 所得到的对象会自动转化为用户子类化的对象，则需要在调用 AVOSCloud.initialize() 之前添加：AVUser.alwaysUseSubUserClass(subUser.class);<br>应用的Application类代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyLeanCloudApp</span> <span class="keyword">extends</span> <span class="title">Application</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> LocationService locationService;</span><br><span class="line">    <span class="keyword">public</span> Vibrator mVibrator;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate();</span><br><span class="line"><span class="comment">//        LeanCloud begin</span></span><br><span class="line">        AVUser.alwaysUseSubUserClass(User.class);</span><br><span class="line">        <span class="comment">// 初始化参数依次为 this, AppId, AppKey</span></span><br><span class="line">        AVOSCloud.initialize(<span class="keyword">this</span>,<span class="string">"5FAl4q4NdF3OhFyVibg7IVa-gzGzoHsz"</span>,<span class="string">"6QpR4hJnFdLuQOQDVf9q0t9"</span>);</span><br><span class="line"><span class="comment">//        LeanCloud end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//        初始化定位sdk，建议在Application中创建</span></span><br><span class="line">        locationService = <span class="keyword">new</span> LocationService(getApplicationContext());</span><br><span class="line">        mVibrator =(Vibrator)getApplicationContext().getSystemService(Service.VIBRATOR_SERVICE);</span><br><span class="line">        SDKInitializer.initialize(getApplicationContext());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="登录和注册"><a href="#登录和注册" class="headerlink" title="登录和注册"></a>登录和注册</h2><p>逻辑比较简单，就是根据用户填入的账号密码来判断，如果LeanCloud中有则登录，没有则注册并且登录。<br>关键代码如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">UserLogin</span><span class="params">(<span class="keyword">final</span> String email, <span class="keyword">final</span> String password)</span></span>&#123;</span><br><span class="line">        User user = <span class="keyword">new</span> User();<span class="comment">// 新建 AVUser 对象实例</span></span><br><span class="line">        user.setUsername(email);<span class="comment">// 设置用户名</span></span><br><span class="line">        user.setPassword(password);<span class="comment">// 设置密码</span></span><br><span class="line">        user.setEmail(email);<span class="comment">// 设置邮箱</span></span><br><span class="line">        user.signUpInBackground(<span class="keyword">new</span> SignUpCallback() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">done</span><span class="params">(AVException e)</span> </span>&#123;</span><br><span class="line">                <span class="keyword">if</span> (e == <span class="keyword">null</span>) &#123;</span><br><span class="line">                    <span class="comment">// 注册成功</span></span><br><span class="line">                    finish();</span><br><span class="line">                    startActivity(<span class="keyword">new</span> Intent(LoginActivity.<span class="keyword">this</span>,MainActivity.class));</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="comment">// 失败的原因可能有多种，常见的是用户名已经存在。</span></span><br><span class="line">                    <span class="keyword">if</span>(e.getCode()==<span class="number">203</span>)&#123;</span><br><span class="line">                        User.logInInBackground(email, password, <span class="keyword">new</span> LogInCallback&lt;User&gt;() &#123;</span><br><span class="line">                            <span class="meta">@Override</span></span><br><span class="line">                            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">done</span><span class="params">(User avUser, AVException e)</span> </span>&#123;</span><br><span class="line">                                <span class="keyword">if</span>(e==<span class="keyword">null</span>)&#123;</span><br><span class="line">                                    <span class="comment">// 登录成功</span></span><br><span class="line">                                    finish();</span><br><span class="line">                                    startActivity(<span class="keyword">new</span> Intent(LoginActivity.<span class="keyword">this</span>,MainActivity.class));</span><br><span class="line">                                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                                    mPasswordView.setError(e.getMessage());</span><br><span class="line">                                    mPasswordView.requestFocus();</span><br><span class="line">                                &#125;</span><br><span class="line">                                showProgress(<span class="keyword">false</span>);</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;,User.class);</span><br><span class="line">                    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                        showProgress(<span class="keyword">false</span>);</span><br><span class="line">                        mPasswordView.setError(e.getMessage());</span><br><span class="line">                        mPasswordView.requestFocus();</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>上面需要注意的就是用户类型直接使用User就可以了，而不是AVUser。<br>顺便贴一下闪屏中对是否存在登录用户的判断：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">User user = User.getCurrentUser(User.class);</span><br><span class="line"><span class="keyword">if</span>(user==<span class="keyword">null</span>)&#123;</span><br><span class="line">    startActivity(<span class="keyword">new</span> Intent(<span class="keyword">this</span>,LoginActivity.class));</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    startActivity(<span class="keyword">new</span> Intent(<span class="keyword">this</span>,MainActivity.class));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="附近的人"><a href="#附近的人" class="headerlink" title="附近的人"></a>附近的人</h2><ol>
+<li><p>在进入之前先开启定位。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">initLocation</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        locationService = ((MyLeanCloudApp) getApplication()).locationService;</span><br><span class="line">        <span class="comment">//获取locationservice实例，建议应用中只初始化1个location实例，然后使用，可以参考其他示例的activity，都是通过此种方式获取locationservice实例的</span></span><br><span class="line">        locationService.registerListener(mListener);</span><br><span class="line">        <span class="comment">//注册监听</span></span><br><span class="line">        locationService.setLocationOption(locationService.getDefaultLocationClientOption());</span><br><span class="line">        locationService.start();<span class="comment">// 定位SDK</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>定位成功后，保存数据，并上传更新(此处就是讲百度Demo中的监听器修改了一下，只完成了主要的功能，部分逻辑没有完善)。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> BDLocationListener mListener = <span class="keyword">new</span> BDLocationListener() &#123;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onReceiveLocation</span><span class="params">(BDLocation location)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">null</span> != location &amp;&amp; location.getLocType() != BDLocation.TypeServerError) &#123;</span><br><span class="line">                <span class="keyword">if</span>(location.getLatitude()!=<span class="number">0</span>&amp;&amp;location.getLongitude()!=<span class="number">0</span>) &#123;</span><br><span class="line">                    <span class="keyword">final</span> AVGeoPoint point = <span class="keyword">new</span> AVGeoPoint(location.getLatitude(), location.getLongitude());</span><br><span class="line">                    String updateTime = location.getTime();</span><br><span class="line">                    User currentUser = User.getCurrentUser(User.class);</span><br><span class="line">                    currentUser.setUserPoint(point);</span><br><span class="line">                    currentUser.saveInBackground(<span class="keyword">new</span> SaveCallback() &#123;</span><br><span class="line">                        <span class="meta">@Override</span></span><br><span class="line">                        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">done</span><span class="params">(AVException e)</span> </span>&#123;</span><br><span class="line">                            <span class="keyword">if</span> (e == <span class="keyword">null</span>) &#123;</span><br><span class="line">                                locationService.stop();</span><br><span class="line">                                startActivity(<span class="keyword">new</span> Intent(MainActivity.<span class="keyword">this</span>, ListActivity.class));</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>此时查看后台可以看到上传的数据<br><img src="http://7xthzp.com1.z0.glb.clouddn.com/leancloud-1.png" alt="user"></p>
+</li>
+<li><p>从LeanCloud中获取当前登录用户附近的用户</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">findNear</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        AVQuery&lt;User&gt; query = <span class="keyword">new</span> AVQuery&lt;&gt;(<span class="string">"_User"</span>);</span><br><span class="line">        query.limit(<span class="number">10</span>);</span><br><span class="line">        query.whereNear(User.USER_POINT, user.getUserPoint());</span><br><span class="line">        query.findInBackground(<span class="keyword">new</span> FindCallback&lt;User&gt;() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">done</span><span class="params">(List&lt;User&gt; list, AVException e)</span> </span>&#123;</span><br><span class="line">                <span class="keyword">if</span>(e==<span class="keyword">null</span> &amp;&amp; list!=<span class="keyword">null</span>) &#123;</span><br><span class="line">                    <span class="keyword">if</span>(list.contains(user))&#123;</span><br><span class="line">                        list.remove(user);</span><br><span class="line">                    &#125;</span><br><span class="line">                    List&lt;User&gt; nearList = list;</span><br><span class="line">                    mAdapter = <span class="keyword">new</span> UserAdapter(ListActivity.<span class="keyword">this</span>,nearList);</span><br><span class="line">                    mListView.setAdapter(mAdapter);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>显示数据<br>此处是使用了一个简单的adapter来显示的，只贴一下关键的代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> View <span class="title">getView</span><span class="params">(<span class="keyword">int</span> position, View convertView, ViewGroup parent)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">final</span> ViewHolder holder;</span><br><span class="line">    <span class="keyword">if</span> (convertView == <span class="keyword">null</span>) &#123;</span><br><span class="line">        holder = <span class="keyword">new</span> ViewHolder();</span><br><span class="line">        convertView = View.inflate(mContext, R.layout.simple_adapter, <span class="keyword">null</span>);</span><br><span class="line">        holder.name = (TextView) convertView.findViewById(R.id.tv_username);</span><br><span class="line">        convertView.setTag(holder);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        holder = (ViewHolder) convertView.getTag();</span><br><span class="line">    &#125;</span><br><span class="line">    User u = getItem(position);</span><br><span class="line">    <span class="keyword">if</span>(u!=<span class="keyword">null</span>)&#123;</span><br><span class="line">        holder.name.setText(u.getUsername()+<span class="string">","</span></span><br><span class="line">                +getDistance(u.getUserPoint()));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> convertView;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">String <span class="title">getDistance</span><span class="params">(AVGeoPoint point)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(point!=<span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span>(point.getLatitude()!=<span class="number">0</span>&amp;&amp;point.getLongitude()!=<span class="number">0</span>) &#123;</span><br><span class="line">            Double l = user.getUserPoint().distanceInMilesTo(point);<span class="comment">//获取两个定位的距离，以米为单位</span></span><br><span class="line">            DecimalFormat decimalFormat = <span class="keyword">new</span> DecimalFormat(<span class="string">"0.00"</span>);<span class="comment">//构造方法的字符格式这里如果小数不足2位,会以0补足.</span></span><br><span class="line">            <span class="keyword">return</span> <span class="string">"距离你 "</span> + decimalFormat.format(l) + <span class="string">" km"</span>;<span class="comment">//format 返回的是字符串</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"对方暂未开通定位"</span>;<span class="comment">//format 返回的是字符串</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>效果如图<br><img src="http://7xthzp.com1.z0.glb.clouddn.com/leancloud-2.png" alt="list"></p>
+</li>
+<li><p>因为现在的User是继承LeanCloud系统中AVUser的，为了安全起见，新创建的应用的 <em>_User</em> 表默认关闭了 find 权限，这样每位用户登录后只能查询到自己在 <em>_User</em> 表中的数据，无法查询其他用户的数据。所以需要设置一下查询的权限，打开 <em> 控制台</em>  &gt; <em> 存储</em>  &gt; <em>_User</em> &gt; <em> 其他</em>  &gt; <em> 权限设置</em>，如下图所示：<br><img src="http://7xthzp.com1.z0.glb.clouddn.com/leancloud-3.png" alt="setting"></p>
+</li>
+</ol>
+<p>更多的权限管理请<a href="https://leancloud.cn/docs/acl_guide-android.html#权限的分级" target="_blank" rel="external">参考此处</a></p>
+<h2 id="退出登录"><a href="#退出登录" class="headerlink" title="退出登录"></a>退出登录</h2><p>用户登出系统时，SDK 会自动清理缓存信息。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AVUser.logOut();<span class="comment">// 清除缓存用户对象</span></span><br></pre></td></tr></table></figure></p>
+<p>这样这个的Demo就开发完成了，希望在你开发小应用的过程中对你有帮助。<br><a href="https://github.com/clawpo/LeanCloud" target="_blank" rel="external">源码地址</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/11/28/2016/application-mk.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Android中不同CPU架构科普
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/11/07/2016/RxJava_01.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">RxJava学习 01</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2016/lean_cloud" data-title="使用LeanCloud查找附近的人" data-url="http://clawpo.github.io/2016/11/23/2016/lean_cloud.html"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"clawpo"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 Claw Po
+    	</div>
+      <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      本站总访问量<span id="busuanzi_value_site_pv"></span>次 | 本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+        <div>
+            友情链接：
+            <a href="http://sykapao.github.io/" target="_blank">sykapao</a>
+            <a href="http://mycloudream.github.io/" target="_blank">cloudream</a>
+        </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

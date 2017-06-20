@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>基于Volley和DiskLruCache的缓存策略 | clawpo&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="在我们开发应用过程中，不可避免的使用网络图片，那么图片请求和缓存就成了一个问题，本着为用户节省流量的角度，我们的应用就应该是已经下载的图片不会重复下载，以及下载过的图片没有网络也能查看的效果，这里就涉及到了网络请求、内存缓存和磁盘缓存。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于Volley和DiskLruCache的缓存策略">
+<meta property="og:url" content="http://clawpo.github.io/2016/06/06/2016/volley_lrucache_disklrucache.html">
+<meta property="og:site_name" content="clawpo's Blog">
+<meta property="og:description" content="在我们开发应用过程中，不可避免的使用网络图片，那么图片请求和缓存就成了一个问题，本着为用户节省流量的角度，我们的应用就应该是已经下载的图片不会重复下载，以及下载过的图片没有网络也能查看的效果，这里就涉及到了网络请求、内存缓存和磁盘缓存。">
+<meta property="og:image" content="http://7xthzp.com1.z0.glb.clouddn.com/showImage.png">
+<meta property="og:updated_time" content="2016-06-06T07:34:12.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="基于Volley和DiskLruCache的缓存策略">
+<meta name="twitter:description" content="在我们开发应用过程中，不可避免的使用网络图片，那么图片请求和缓存就成了一个问题，本着为用户节省流量的角度，我们的应用就应该是已经下载的图片不会重复下载，以及下载过的图片没有网络也能查看的效果，这里就涉及到了网络请求、内存缓存和磁盘缓存。">
+<meta name="twitter:image" content="http://7xthzp.com1.z0.glb.clouddn.com/showImage.png">
+  
+    <link rel="alternative" href="/atom.xml" title="clawpo&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://tp4.sinaimg.cn/1678286327/180/5667903511/1" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Claw Po</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">我就是最爱蜡笔小新的大射手座！</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/categories/life/">随笔</a></li>
+				        
+							<li><a href="/">关于</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/clawpo/" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/1678286327/" title="weibo">weibo</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/geng-xiao-tai" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/80后/" style="font-size: 10px;">80后</a> <a href="/tags/LeanCloud/" style="font-size: 10px;">LeanCloud</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/android-studio/" style="font-size: 10px;">android studio</a> <a href="/tags/apache/" style="font-size: 10px;">apache</a> <a href="/tags/atom/" style="font-size: 10px;">atom</a> <a href="/tags/ease/" style="font-size: 10px;">ease</a> <a href="/tags/eclipse/" style="font-size: 10px;">eclipse</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/google-cloud/" style="font-size: 12.5px;">google cloud</a> <a href="/tags/hellocharts/" style="font-size: 10px;">hellocharts</a> <a href="/tags/java/" style="font-size: 17.5px;">java</a> <a href="/tags/junit/" style="font-size: 10px;">junit</a> <a href="/tags/libs/" style="font-size: 10px;">libs</a> <a href="/tags/linux/" style="font-size: 12.5px;">linux</a> <a href="/tags/live/" style="font-size: 10px;">live</a> <a href="/tags/longboard/" style="font-size: 15px;">longboard</a> <a href="/tags/lru/" style="font-size: 10px;">lru</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/mvp/" style="font-size: 10px;">mvp</a> <a href="/tags/post/" style="font-size: 12.5px;">post</a> <a href="/tags/retrofit/" style="font-size: 10px;">retrofit</a> <a href="/tags/rxjava/" style="font-size: 10px;">rxjava</a> <a href="/tags/sdk/" style="font-size: 10px;">sdk</a> <a href="/tags/squareup/" style="font-size: 10px;">squareup</a> <a href="/tags/sykapao/" style="font-size: 10px;">sykapao</a> <a href="/tags/volley/" style="font-size: 12.5px;">volley</a> <a href="/tags/zentao/" style="font-size: 10px;">zentao</a> <a href="/tags/图表/" style="font-size: 10px;">图表</a> <a href="/tags/环信/" style="font-size: 10px;">环信</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，坚持寻觅真爱的孩子…</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Claw Po</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://tp4.sinaimg.cn/1678286327/180/5667903511/1" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Claw Po</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">我就是最爱蜡笔小新的大射手座！</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/categories/life/">随笔</a></li>
+		        
+					<li><a href="/">关于</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/clawpo/" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/1678286327/" title="weibo">weibo</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/geng-xiao-tai" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-2016/volley_lrucache_disklrucache" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/06/2016/volley_lrucache_disklrucache.html" class="article-date">
+  	<time datetime="2016-06-06T01:41:00.000Z" itemprop="datePublished">2016-06-06</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      基于Volley和DiskLruCache的缓存策略
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/lru/">lru</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/volley/">volley</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/android/">android</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在我们开发应用过程中，不可避免的使用网络图片，那么图片请求和缓存就成了一个问题，本着为用户节省流量的角度，我们的应用就应该是已经下载的图片不会重复下载，以及下载过的图片没有网络也能查看的效果，这里就涉及到了网络请求、内存缓存和磁盘缓存。<br><a id="more"></a><br>简单的介绍一下今天的两位主角：<br><a href="https://github.com/JakeWharton/DiskLruCache" target="_blank" rel="external">DiskLruCache</a> ：是基于Lru磁盘缓存的Java实现。</p>
+<p><a href="https://android.googlesource.com/platform/frameworks/volley" target="_blank" rel="external">Volley</a> ：Google推出的Android异步网络请求框架和图片加载框架(自备梯子)。</p>
+<p>细心的小伙伴应该发现咋是两个主角呢，说好的内存缓存呢？其实在Volley中已经默认实现内存缓存了，我们简单的介绍下Volley的接口及关键函数(<em>以下为引用</em>)。</p>
+<h6 id="ImageLoader"><a href="#ImageLoader" class="headerlink" title="ImageLoader"></a>ImageLoader</h6><p>ImageLoader类需要一个请求的实例以及一个ImageCache类的实现。图片通过传递一个URL和一个ImageListener实例到get()方法进行加载。从那里，ImageLoader检查ImageCache，如果图像不是在缓存中，就从网络中加载图片。</p>
+<h6 id="NetworkImageView"><a href="#NetworkImageView" class="headerlink" title="NetworkImageView"></a>NetworkImageView</h6><p>这个类代替布局中的ImageViews类，而且需要使用ImageLoader类。NetworkImageView类的setUrl()方法需要一个URL路径字符串和一个ImageLoader实例。然后使用ImageLoder的get()方法来获取图片数据。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;com.android.volley.toolbox.NetworkImageView</span><br><span class="line">    android:id=<span class="string">"@+id/twitterUserImage"</span></span><br><span class="line">    android:layout_alignParentLeft=<span class="string">"true"</span></span><br><span class="line">    android:layout_alignParentTop=<span class="string">"true"</span></span><br><span class="line">    android:layout_width=<span class="string">"40dp"</span></span><br><span class="line">    android:layout_height=<span class="string">"40dp"</span></span><br><span class="line">    android:padding=<span class="string">"5dp"</span></span><br><span class="line">    /&gt;</span><br></pre></td></tr></table></figure>
+<h6 id="ImageCache"><a href="#ImageCache" class="headerlink" title="ImageCache"></a>ImageCache</h6><p>Volley库的ImageCache接口允许你使用你喜好的L1缓存实现。</p>
+<p>ImageCache接口有两个方法，getBitmap(String url)和putBitmap(String url, Bitmap bitmap)。这些桩是非常简单的，它们可以添加到任何缓存实现里。</p>
+<p>有两种可用的缓存实现。推荐的方法是在内存中使用一个基础的LRU缓存。对于硬盘的缓存实现，我选择使用Jack Wharton编写的DiskLruCache。我选择这个实现是因为它在Android社区中被频繁的使用。使用一个基于磁盘的L1缓存可能导致阻塞I/O问题。Volley已经有一个隐式的硬盘L2缓存。硬盘L1缓存已经被包含在内了。</p>
+<p><strong>原生项目的介绍如下</strong><br>以下是这个实现的主要组件：</p>
+<h6 id="RequestManager"><a href="#RequestManager" class="headerlink" title="RequestManager"></a>RequestManager</h6><p>RequestManager维护我们的RequestQueue的一个引用。Volley使用ResuestQueue来处理我们对Twitter数据和图片加载的请求。</p>
+<h6 id="GsonRequest"><a href="#GsonRequest" class="headerlink" title="GsonRequest"></a>GsonRequest</h6><p>GsonRequest与图片加载没有直接联系，但它代表了如何扩展Volley请求类来处理JSON解析。该类用于对Twitter的GET请求和TwitterData对象的结果。</p>
+<h6 id="BitmapLruImageCache"><a href="#BitmapLruImageCache" class="headerlink" title="BitmapLruImageCache"></a>BitmapLruImageCache</h6><p>该类是一个基本的“最近最少使用（LRU）”内存缓存实现。它速度快但不会阻塞I/O。这是推荐的方法。</p>
+<h6 id="DiskLruImageCache"><a href="#DiskLruImageCache" class="headerlink" title="DiskLruImageCache"></a>DiskLruImageCache</h6><p>DiskLruImageCache是一个位图版本的DiskLruCache封装。它从DiskLruCache中增加并检索位图，还处理缓存的实例化。硬盘缓存可能会造成I/O阻塞。</p>
+<h6 id="ImageCacheManager"><a href="#ImageCacheManager" class="headerlink" title="ImageCacheManager"></a>ImageCacheManager</h6><p>ImageCacheManager持有ImageCache和Volley ImageLoader引用。</p>
+<p>在ImageCacheManager中，你可能注意到一点就是我们使用URL字符串的hashCode()作为缓存的键值。这是由于URL中的某些字符不能作为缓存的键值。</p>
+<h6 id="BuzzArrayAdapter"><a href="#BuzzArrayAdapter" class="headerlink" title="BuzzArrayAdapter"></a>BuzzArrayAdapter</h6><p>该适配器比较简单的。这里只需要注意一点，我们要实现Volley的Listener和ErrorListener接口，并且把该适配器作为Listener参数传递给了NetworkImageView 的 setUrl(String string , Listener listener, ErrorListener errorListener) 方法。这个适配器包含了一些额外代码用于滚动时加载旧的tweets。</p>
+<p>以上就是原博的内容，我们的改造是基于<a href="https://github.com/rdrobinson3/VolleyImageCacheExample" target="_blank" rel="external">这个项目</a>来进行的。</p>
+<p>首先来介绍下具体的思路，如图：<br><img src="http://7xthzp.com1.z0.glb.clouddn.com/showImage.png" alt="showimage"></p>
+<p><em>简单介绍一下思路：加载图片使用的是NetworkImageView的setImageUrl()方法，参数是图片的下载地址URL和ImageLoader实例，当URL不为空的时候会读取内存缓存(BitmapLruImageCache)中对应URL的图片，当读取不到时，去磁盘缓存(DiskLruImageCache)中查找，此处查找使用URL的hashCode值作为键值，如果找到图片则返回给内存并添加到内存保存，如果没有找到，返回NULL，Volley会自动启动下载图片的请求并添加到队列中，在下载完成后，分别将图片保存到对应的内存缓存和磁盘缓存中。</em></p>
+<h5 id="1-首先改造的是项目中缓存的实现，需要修改为磁盘和内存同时使用。"><a href="#1-首先改造的是项目中缓存的实现，需要修改为磁盘和内存同时使用。" class="headerlink" title="1.首先改造的是项目中缓存的实现，需要修改为磁盘和内存同时使用。"></a>1.首先改造的是项目中缓存的实现，需要修改为磁盘和内存同时使用。</h5><p>在ImageCacheManager中删除CacheType的两种枚举类型，并添加磁盘缓存的实现对象，然后修改实例化的方法，如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * Image cache implementation</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">private</span> BitmapLruImageCache mMemoryCache;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * Volley image loader</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">private</span> ImageLoader mImageLoader;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * Image disk cache implementation</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">private</span> DiskLruImageCache mDiskCache;</span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * Initializer for the manager. Must be called prior to use.</span><br><span class="line"> *</span><br><span class="line"> * <span class="doctag">@param</span> context</span><br><span class="line"> *   application context</span><br><span class="line"> * <span class="doctag">@param</span> uniqueName</span><br><span class="line"> *   name for the cache location</span><br><span class="line"> * <span class="doctag">@param</span> cacheSize</span><br><span class="line"> *   max size for the cache</span><br><span class="line"> * <span class="doctag">@param</span> compressFormat</span><br><span class="line"> *   file type compression format.</span><br><span class="line"> * <span class="doctag">@param</span> quality</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">(Context context, String uniqueName, <span class="keyword">int</span> cacheSize, CompressFormat compressFormat,</span><br><span class="line">				 <span class="keyword">int</span> quality)</span></span>&#123;</span><br><span class="line">    mDiskCache= <span class="keyword">new</span> DiskLruImageCache(context, uniqueName, cacheSize, compressFormat, quality);</span><br><span class="line">    mMemoryCache = <span class="keyword">new</span> BitmapLruImageCache(cacheSize);</span><br><span class="line">    mImageLoader = <span class="keyword">new</span> ImageLoader(RequestManager.getRequestQueue(), mMemoryCache);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>需要说明的是，这里可以看成只增加了DiskLruImageCache的实例，Volley原生的使用内存加载请求图片的逻辑方法并没有改变，所以你如果想对自己现有的项目修改，则只需添加DiskLruImageCache的实例即可。</p>
+<h5 id="2-修改MainApplication中初始化的方法"><a href="#2-修改MainApplication中初始化的方法" class="headerlink" title="2.修改MainApplication中初始化的方法"></a>2.修改MainApplication中初始化的方法</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * Create the image cache. Uses Memory Cache by default. Change to Disk for a Disk based LRU implementation.  </span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">createImageCache</span><span class="params">()</span></span>&#123;</span><br><span class="line">	ImageCacheManager.getInstance().init(<span class="keyword">this</span>,</span><br><span class="line">			<span class="string">"pic"</span></span><br><span class="line">			, DISK_IMAGECACHE_SIZE</span><br><span class="line">			, DISK_IMAGECACHE_COMPRESS_FORMAT</span><br><span class="line">			, DISK_IMAGECACHE_QUALITY);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>去掉了最后一个缓存类型的参数，并修改了图片保存的目录为pic(<em>此处根据你项目的实际情况而定</em>)，在测试过程中发现磁盘缓存保存的地址不够友好，改写了DiskLruImageCache类中getDiskCacheDir的方法，如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * Get a usable cache directory (external if available, internal otherwise).</span><br><span class="line"> * 根据传入的uniqueName获取硬盘缓存的路径地址。</span><br><span class="line"> * <span class="doctag">@param</span> context</span><br><span class="line"> *            The context to use</span><br><span class="line"> * <span class="doctag">@param</span> uniqueName</span><br><span class="line"> *            A unique directory name to append to the cache dir</span><br><span class="line"> * <span class="doctag">@return</span> The cache dir</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> File <span class="title">getDiskCacheDir</span><span class="params">(Context context, String uniqueName)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// Check if media is mounted or storage is built-in, if so, try and use</span></span><br><span class="line">    <span class="comment">// external cache dir</span></span><br><span class="line">    <span class="comment">// otherwise use internal cache dir</span></span><br><span class="line">    String cachePath;</span><br><span class="line">    <span class="keyword">if</span> (Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())</span><br><span class="line">            || !Environment.isExternalStorageRemovable()) &#123;</span><br><span class="line">        cachePath = context.getExternalCacheDir().getPath();</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        cachePath = context.getCacheDir().getPath();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> File(cachePath + File.separator + uniqueName);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h5 id="3-修改获取和添加图片的逻辑"><a href="#3-修改获取和添加图片的逻辑" class="headerlink" title="3. 修改获取和添加图片的逻辑"></a>3. 修改获取和添加图片的逻辑</h5><p>上面的准备工作做完，我们就只差一步就成功了。<br>上面也说道，这次修改没有改变Volley原生加载图片的方法，所以我们只需要在获取和添加图片的地方做些小改动就可以，这里默认使用的是内存缓存图片的方法，所以修改的是BitmapLruImageCache类，如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Bitmap <span class="title">getBitmap</span><span class="params">(String url)</span> </span>&#123;</span><br><span class="line">	Log.v(TAG, <span class="string">"Retrieved item from Mem Cache"</span>);</span><br><span class="line">    Bitmap bitmap = get(url);</span><br><span class="line">    <span class="comment">//如果没有在内存中找到则去磁盘缓存查找</span></span><br><span class="line">    <span class="keyword">if</span>(bitmap==<span class="keyword">null</span>)&#123;</span><br><span class="line">        bitmap = ImageCacheManager.getInstance().getBitmap(url);</span><br><span class="line">        <span class="comment">//如果磁盘缓存找到，添加到内存缓存中</span></span><br><span class="line">        <span class="keyword">if</span>(bitmap!=<span class="keyword">null</span>)&#123;</span><br><span class="line">            putBitmap(url,bitmap);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="keyword">return</span> bitmap;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">putBitmap</span><span class="params">(String url, Bitmap bitmap)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//在getBitmap方法返回NULL时，Volley启动下载图片的任务下载图片成功后会调用此方法</span></span><br><span class="line">	Log.v(TAG, <span class="string">"Added item to Mem Cache"</span>);</span><br><span class="line">    <span class="comment">//原生的内存缓存添加图片到内存中的方法</span></span><br><span class="line">	put(url, bitmap);</span><br><span class="line">    <span class="comment">//将图片同时添加到磁盘缓存中</span></span><br><span class="line">    ImageCacheManager.getInstance().putBitmap(url,bitmap);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>以上就是全部的修改啦，很简单吧。<br><a href="https://github.com/rdrobinson3/VolleyImageCacheExample" target="_blank" rel="external">GitHub项目</a>里面的例子是下载Tweets数据的，可以修改为你自己项目的数据，学以致用，赶紧去实践吧。</p>
+<p>参考：<br><a href="http://www.captechconsulting.com/blogs/google-io-2013-volley-image-cache-tutorial" target="_blank" rel="external">Google I/O 2013: Volley Image Cache Tutorial</a></p>
+<p><a href="http://android.jobbole.com/81287/" target="_blank" rel="external">Google I/O 2013: Volley加载图片添加缓存处理</a></p>
+<p><a href="https://github.com/rdrobinson3/VolleyImageCacheExample" target="_blank" rel="external">GitHub项目</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/06/23/2016/Error-junit-4.12.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Error:(23, 17) Failed to resolve: junit:junit:4.12
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/05/09/2016/Android_Universal_framework.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Android通用流行框架大全</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2016/volley_lrucache_disklrucache" data-title="基于Volley和DiskLruCache的缓存策略" data-url="http://clawpo.github.io/2016/06/06/2016/volley_lrucache_disklrucache.html"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"clawpo"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 Claw Po
+    	</div>
+      <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      本站总访问量<span id="busuanzi_value_site_pv"></span>次 | 本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+        <div>
+            友情链接：
+            <a href="http://sykapao.github.io/" target="_blank">sykapao</a>
+            <a href="http://mycloudream.github.io/" target="_blank">cloudream</a>
+        </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
