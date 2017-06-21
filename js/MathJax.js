@@ -29,7 +29,7 @@
         //
         //  Issue a console warning
         //
-        console.warn('WARNING: cdn.mathjax.org has been retired. Check https://www.mathjax.org/cdn-shutting-down/ for migration tips.')
+        // console.warn('WARNING: cdn.mathjax.org has been retired. Check https://www.mathjax.org/cdn-shutting-down/ for migration tips.')
     }
 
     if (document.currentScript) {
