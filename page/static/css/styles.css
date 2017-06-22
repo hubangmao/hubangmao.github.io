@@ -1,0 +1,119 @@
+/*theme*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 100%;
+}
+
+/*
+
+主题色:
+#333333  黑
+#e8e8e8  浅灰
+#FFFFFF  白
+
+*/
+
+body {
+    background-color: #FFFFFF;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none !important;
+}
+
+/*当 0-959手机*/
+@media only screen and (max-width: 959px) {
+    /*导航*/
+    .div-navigation {
+        width: 100%;
+        height: auto;
+        min-height: 100px;
+        background-color: #e8e8e8;
+    }
+
+    .img-avatar {
+        width: 20%;
+        position: absolute;
+        border-radius: 50%;
+        left: 40%;
+        margin-top: -14%;
+        border: #e8e8e8 solid 4px;
+    }
+
+    /*内容部分右浮动*/
+    #div-content {
+        width: 100%;
+        min-height: 1600px;
+        height: auto;
+        background-color: #e8e8e8;
+    }
+
+}
+
+/*当 959-1920 电脑*/
+@media screen and (min-width: 959px) and (max-width: 1920px) {
+    /*导航*/
+    .div-navigation {
+        width: 25%;
+        min-height: 1600px;
+        height: auto;
+        float: left;
+        background-color: #e8e8e8;
+        position: relative;
+    }
+
+    .img-avatar {
+        width: 30%;
+        position: absolute;
+        border-radius: 50%;
+        left: 35%;
+        margin-top: -14%;
+        border: #e8e8e8 solid 4px;
+    }
+
+    /*内容部分右浮动*/
+    #div-content {
+        width: 74%;
+        float: right;
+        margin-right: 0.5%;
+        min-height: 1600px;
+        height: auto;
+        background-color: #e8e8e8;
+    }
+
+}
+
+.div-nav-bg {
+    width: 100%;
+    height: 35%;
+    min-height: 270px;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAUElEQVQYV2NkYGAwBuKzQAwDID4IoIgxIikAMZE1oRiArBDdZBSNMIXoJiFbDZYDKcSmCOYimDuNSVKIzRNYrUYOFuQgweoZbIoxgoeoAAcAEckW11HVTfcAAAAASUVORK5CYII=);
+    background-color: #212121;
+    border-bottom: #FFFFFF solid 5px;
+}
+
+.a-home i {
+    color: #333333;
+    width: 100%;
+    font-size: 22px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.a-home i:hover {
+    color: #5b5b5b;
+}
+
+.a-github {
+    width: 24px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 100px;
+}
