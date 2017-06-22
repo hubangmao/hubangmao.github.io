@@ -10,8 +10,9 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     font-size: 100%;
 }
 
-/*
+/*/////////////////////////////公共部分/////////////////////////////*/
 
+/*
 主题色:
 #333333  黑
 #e8e8e8  浅灰
@@ -27,6 +28,36 @@ a {
     cursor: pointer;
     text-decoration: none !important;
 }
+
+.div-nav-bg {
+    width: 100%;
+    height: 35%;
+    min-height: 270px;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAUElEQVQYV2NkYGAwBuKzQAwDID4IoIgxIikAMZE1oRiArBDdZBSNMIXoJiFbDZYDKcSmCOYimDuNSVKIzRNYrUYOFuQgweoZbIoxgoeoAAcAEckW11HVTfcAAAAASUVORK5CYII=);
+    background-color: #212121;
+    border-bottom: #FFFFFF solid 5px;
+}
+
+.a-home i {
+    color: #333333;
+    width: 100%;
+    font-size: 22px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.a-home i:hover {
+    color: #5b5b5b;
+}
+
+.a-github {
+    width: 24px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+/*/////////////////////////////公共部分/////////////////////////////*/
 
 /*当 0-959手机*/
 @media only screen and (max-width: 959px) {
@@ -90,30 +121,3 @@ a {
 
 }
 
-.div-nav-bg {
-    width: 100%;
-    height: 35%;
-    min-height: 270px;
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAUElEQVQYV2NkYGAwBuKzQAwDID4IoIgxIikAMZE1oRiArBDdZBSNMIXoJiFbDZYDKcSmCOYimDuNSVKIzRNYrUYOFuQgweoZbIoxgoeoAAcAEckW11HVTfcAAAAASUVORK5CYII=);
-    background-color: #212121;
-    border-bottom: #FFFFFF solid 5px;
-}
-
-.a-home i {
-    color: #333333;
-    width: 100%;
-    font-size: 22px;
-    margin-top: 50px;
-    text-align: center;
-}
-
-.a-home i:hover {
-    color: #5b5b5b;
-}
-
-.a-github {
-    width: 24px;
-    display: block;
-    margin: 0 auto;
-    margin-top: 100px;
-}
