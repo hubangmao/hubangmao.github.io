@@ -18,11 +18,18 @@ $(document).ready(function () {
     }, 6000);
 
     $(".a-github img").mouseenter(function () {
-        $(this).attr("src", "page/static/images/ui-icon-dow.png");
+        $(this).attr("src", "page/static/images/ui-github-dow.png");
 
     });
     $(".a-github img").mouseleave(function () {
-        $(this).attr("src", "page/static/images/ui-icon.png");
+        $(this).attr("src", "page/static/images/ui-github-up.png");
     });
+
+    $(window).resize(function(){
+        var Height = $(window).height();
+        var Width = $(window).width();
+
+         console.log(Width);
+    })
 
 });

@@ -22,6 +22,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 body {
     background-color: #FFFFFF;
+    height: auto;
 }
 
 a {
@@ -35,7 +36,7 @@ a {
     min-height: 270px;
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAUElEQVQYV2NkYGAwBuKzQAwDID4IoIgxIikAMZE1oRiArBDdZBSNMIXoJiFbDZYDKcSmCOYimDuNSVKIzRNYrUYOFuQgweoZbIoxgoeoAAcAEckW11HVTfcAAAAASUVORK5CYII=);
     background-color: #212121;
-    border-bottom: #FFFFFF solid 5px;
+    border-bottom: #FFFFFF solid 4px;
 }
 
 .a-home i {
@@ -57,6 +58,14 @@ a {
     margin-top: 100px;
 }
 
+.div-bottom {
+    width: 100%;
+    height: 80px;
+    border-top: #333333 solid 1px;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAUElEQVQYV2NkYGAwBuKzQAwDID4IoIgxIikAMZE1oRiArBDdZBSNMIXoJiFbDZYDKcSmCOYimDuNSVKIzRNYrUYOFuQgweoZbIoxgoeoAAcAEckW11HVTfcAAAAASUVORK5CYII=);
+    background-color: #212121;
+}
+
 /*/////////////////////////////公共部分/////////////////////////////*/
 
 /*当 0-959手机*/
@@ -75,7 +84,7 @@ a {
         border-radius: 50%;
         left: 40%;
         margin-top: -10%;
-        border: #e8e8e8 solid 4px;
+        border: #FFFFFF solid 4px;
     }
 
     /*内容部分右浮动*/
@@ -106,7 +115,7 @@ a {
         border-radius: 50%;
         left: 35%;
         margin-top: -14%;
-        border: #e8e8e8 solid 4px;
+        border: #FFFFFF solid 4px;
     }
 
     /*内容部分右浮动*/
