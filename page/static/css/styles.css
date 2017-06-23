@@ -22,7 +22,6 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 body {
     background-color: #FFFFFF;
-    height: auto;
 }
 
 a {
@@ -64,6 +63,9 @@ a {
     border-top: #333333 solid 1px;
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAUElEQVQYV2NkYGAwBuKzQAwDID4IoIgxIikAMZE1oRiArBDdZBSNMIXoJiFbDZYDKcSmCOYimDuNSVKIzRNYrUYOFuQgweoZbIoxgoeoAAcAEckW11HVTfcAAAAASUVORK5CYII=);
     background-color: #212121;
+    position: fixed;
+    bottom: 0;
+    z-index: 10;
 }
 
 /*/////////////////////////////公共部分/////////////////////////////*/
@@ -74,7 +76,6 @@ a {
     .div-navigation {
         width: 100%;
         height: auto;
-        min-height: 100px;
         background-color: #e8e8e8;
     }
 
@@ -95,6 +96,10 @@ a {
         background-color: #e8e8e8;
     }
 
+    .div-bottom {
+        position: relative;
+    }
+
 }
 
 /*当 959-1920 电脑*/
@@ -102,11 +107,11 @@ a {
     /*导航*/
     .div-navigation {
         width: 25%;
-        min-height: 1600px;
-        height: auto;
+        height: 100%;
         float: left;
         background-color: #e8e8e8;
-        position: relative;
+        position: fixed;
+        z-index: 9;
     }
 
     .img-avatar {
@@ -122,10 +127,15 @@ a {
     #div-content {
         width: 74%;
         float: right;
-        margin-right: 0.5%;
         min-height: 1600px;
-        height: auto;
-        background-color: #e8e8e8;
+        margin-right: 0.5%;
+        overflow: hidden;
+    }
+
+    .div-bottom {
+        position: fixed;
+        bottom: 0;
+        z-index: 10;
     }
 
 }

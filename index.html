@@ -9,7 +9,7 @@
     <link type="text/css" rel="stylesheet" href="page/static/css/styles.css"/>
 
 </head>
-<body>
+<body style="">
 
 
 <div class="div-navigation">
@@ -23,26 +23,72 @@
     <a class="a-github"
        href="https://github.com/hubangmao" target="_blank"><img
             src="page/static/images/ui-github-up.png"/></a>
+
+
 </div>
 
 
 <div id="div-content">
     <div class="div-content">
 
+        <script>
+            var colorArr = new Array();
+
+
+            colorArr.push("#FFF68F");
+            colorArr.push("#FF4040");
+            colorArr.push("#FF7F00");
+            colorArr.push("#2e2e2e");
+            colorArr.push("#D02090");
+            colorArr.push("#E066FF");
+            colorArr.push("#C0FF3E");
+            colorArr.push("#8B4726");
+            colorArr.push("#757575");
+            colorArr.push("#607B8B");
+            colorArr.push("#121212");
+            colorArr.push("#000080");
+
+            var urlArr = new Array();
+            urlArr.push("https://github.com/hubangmao");
+            urlArr.push("http://www.114la.com/other/rgb.htm");
+            urlArr.push("https://www.taobao.com/");
+            urlArr.push("https://www.mi.com/");
+            urlArr.push("http://www.smartisan.com/");
+            urlArr.push("http://www.samsung.com/cn/");
+            urlArr.push("http://www.qualcomm.cn ");
+            urlArr.push("https://ark.intel.com/");
+            urlArr.push("http://kg.qq.com/node/personal?uid=61949884202b358d&shareuid=61949884202b358d&topsource=a0_pn201001006_z11_u39515626_l0_t1498183083__");
+            urlArr.push("http://clawpo.github.io/");
+            urlArr.push("http://mycloudream.github.io/");
+            urlArr.push("https://www.qiniu.com/");
+
+            var v = "";
+            for (var i = 1; i < 100; i++) {
+                var v1 = "";
+                for (var i1 = 1; i1 < 300; i1++) {
+                    var num = Math.floor(Math.random() * 12 + 1);
+                    var color = colorArr[num];
+                    v1 += "<a style='color: " + color + "' href='" + urlArr[num] + "'target='_blank'>" + (i1 % 2) + "</a>";
+                }
+                v += v1 + "</br>";
+            }
+            document.write("<p>" + v + "</p>");
+
+        </script>
     </div>
 
 
 </div>
 
-<div style="clear: both"></div>
-<div class="div-bottom">
-    <p style="float: right;margin-top: 30px;margin-right: 20px ;font-size: 16px;">© 2017 balance-hbm</p>
 
-    <span style="float: left;margin-top: 30px;margin-left: 20px;font-size: 16px">
+<div class="div-bottom">
+    <p style="margin-top: 15px;font-size: 16px;float: right;margin-right: 2%;">© 2017 balance-hbm</p>
+    <div style="clear: both"></div>
+    <div style="margin-top: 15px;font-size: 16px;float: right;margin-right: 2%;">
         友情链接:
         <a href="http://clawpo.github.io/" target="_blank">clawpo</a>
         <a href="http://mycloudream.github.io/" target="_blank">cloudream</a>
-    </span>
+    </div>
 
 </div>
 

@@ -15,6 +15,7 @@ $(document).ready(function () {
         var num = Math.floor(Math.random() * 5 + 1);
         var color = colorArr[num];
         $(".div-nav-bg").css("background-color", color);
+        $(".div-bottom").css("background-color", color);
     }, 6000);
 
     $(".a-github img").mouseenter(function () {
@@ -25,11 +26,11 @@ $(document).ready(function () {
         $(this).attr("src", "page/static/images/ui-github-up.png");
     });
 
-    $(window).resize(function(){
+    $(window).resize(function () {
         var Height = $(window).height();
         var Width = $(window).width();
 
-         console.log(Width);
+        console.log(Width);
     })
 
 });
