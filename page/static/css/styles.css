@@ -124,7 +124,7 @@ a {
     #div-content {
         width: 74%;
         float: right;
-        min-height: 1600px;
+        height: auto;
         margin-right: 0.5%;
         overflow: hidden;
     }
