@@ -63,9 +63,6 @@ a {
     border-top: #333333 solid 1px;
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAUElEQVQYV2NkYGAwBuKzQAwDID4IoIgxIikAMZE1oRiArBDdZBSNMIXoJiFbDZYDKcSmCOYimDuNSVKIzRNYrUYOFuQgweoZbIoxgoeoAAcAEckW11HVTfcAAAAASUVORK5CYII=);
     background-color: #212121;
-    position: fixed;
-    bottom: 0;
-    z-index: 10;
 }
 
 /*/////////////////////////////公共部分/////////////////////////////*/
