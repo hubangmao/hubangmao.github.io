@@ -26,6 +26,15 @@ $(document).ready(function () {
         $(this).attr("src", "page/static/images/ui-github-up.png");
     });
 
+    $(".div-links a").mouseenter(function () {
+        $(".this").css("color", "#e8e8e8")
+    });
+
+    $(".div-links a").mouseleave(function () {
+        $(".this").css("color", "#333333")
+    });
+
+
     $(window).resize(function () {
         var Height = $(window).height();
         var Width = $(window).width();
