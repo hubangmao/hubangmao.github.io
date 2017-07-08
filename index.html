@@ -2,15 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
     <title>balance</title>
-    <meat name="viewport" conntent="width=device-width,initial-scale=1"></meat>
     <link rel="shortcut icon" href="page/static/images/ui-github-up.png">
     <link type="text/css" rel="stylesheet" href="page/static/lib/bootstrap.css"/>
     <link type="text/css" rel="stylesheet" href="page/static/css/styles.css"/>
 
 </head>
-<body style="">
-
+<body>
 
 <div class="div-navigation">
 
@@ -27,13 +26,11 @@
 
 </div>
 
-
 <div id="div-content">
     <div class="div-content">
+
         <script>
             var colorArr = new Array();
-
-
             colorArr.push("#FFF68F");
             colorArr.push("#FF4040");
             colorArr.push("#FF7F00");
@@ -62,10 +59,10 @@
             urlArr.push("https://www.qiniu.com/");
 
             var v = "";
-            for (var i = 1; i < 20; i++) {
+            for (var i = 1; i < 5; i++) {
                 var v1 = "";
-                for (var i1 = 1; i1 < 300; i1++) {
-                    var num = Math.floor(Math.random() * 12 + 1);
+                for (var i1 = 1; i1 < 200; i1++) {
+                    var num = Math.floor(Math.random() * 11 + 1);
                     var color = colorArr[num];
                     v1 += "<a style='color: " + color + ";font-size: " + (num + 14) + "px' href='" + urlArr[num] + "'target='_blank'>" + (i1 % 2) + "</a>";
                 }
@@ -81,7 +78,6 @@
 
 </div>
 
-
 <div class="div-bottom">
     <p style="margin-top: 15px;font-size: 16px;float: right;margin-right: 2%;color: #333333">© 2017 balance-hbm</p>
     <div style="clear: both"></div>
@@ -90,13 +86,11 @@
         <a href="http://clawpo.github.io/" target="_blank" style="color: #333333;">clawpo</a>
         <a href="http://mycloudream.github.io/" target="_blank" style="color: #333333">cloudream</a>
     </div>
-
 </div>
+
 
 <script type="text/javascript" src="page/static/lib/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="page/static/lib/bootstrap.js"></script>
 <script type="text/javascript" src="page/static/javascript/main.js"></script>
-
-
 </body>
 </html>

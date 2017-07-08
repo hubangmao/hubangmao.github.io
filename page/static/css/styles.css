@@ -91,6 +91,7 @@ a {
         min-height: 1600px;
         height: auto;
         background-color: #e8e8e8;
+        overflow: hidden;
     }
 
     .div-bottom {
