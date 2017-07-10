@@ -3,42 +3,15 @@
  */
 
 $(document).ready(function () {
-
-    var colorArr = new Array();
-    colorArr.push("#191919");
-    colorArr.push("#2e2e2e");
-    colorArr.push("#191919");
-    colorArr.push("#2e2e2e");
-    colorArr.push("#2b2b2b");
-
-    setInterval(function () {
-        var num = Math.floor(Math.random() * 5 + 1);
-        var color = colorArr[num];
-        $(".div-nav-bg").css("background-color", color);
-        $(".div-bottom").css("background-color", color);
-    }, 6000);
-
-    $(".a-github img").mouseenter(function () {
-        $(this).attr("src", "page/static/images/ui-github-dow.png");
-
-    });
-    $(".a-github img").mouseleave(function () {
-        $(this).attr("src", "page/static/images/ui-github-up.png");
-    });
-
-    $(".div-links a").mouseenter(function () {
-        $(this).css("color", "#e8e8e8");
-    });
-
-    $(".div-links a").mouseleave(function () {
-        $(this).css("color", "#333333");
-    });
-
     $(window).resize(function () {
-        var Height = $(window).height();
-        var Width = $(window).width();
+        var height = $(window).height();
+        var width = $(window).width();
 
-        console.log(Width);
     })
+
+    $(".item").fadeOut(0);
+    setTimeout(function () {
+        $(".item").fadeIn(1000);
+    }, 1000);
 
 });

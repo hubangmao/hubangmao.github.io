@@ -65,6 +65,52 @@ a {
     background-color: #212121;
 }
 
+.item {
+    width: 90%;
+    height: auto;
+    margin: 20px auto;
+    background-color: #333333;
+    color: #FFFFFF;
+    border-radius: 8px;
+    position: relative;
+    padding: 10px;
+}
+
+.item h1 {
+    padding: 4px;
+    border-bottom: #bcbcbc solid 1px;
+}
+
+.item h1 span {
+    float: right;
+    padding: 4px;
+    font-size: 12px;
+    background: url(../images/ui-calendar.png) left center no-repeat;
+    background-size: 15px 15px;
+    padding-left: 20px;
+}
+
+.item div {
+    width: 90%;
+    margin: 10px auto;
+}
+
+.item img {
+    width: 60px;
+    float: left;
+}
+
+.item p {
+    margin-top: 40px;
+    padding-top: 20px;
+}
+
+.item a {
+    position: absolute;
+    bottom: 2px;
+    right: 8px;
+}
+
 /*/////////////////////////////公共部分/////////////////////////////*/
 
 /*当 0-959手机*/
