@@ -42,7 +42,7 @@ a {
     color: #333333;
     width: 100%;
     font-size: 22px;
-    margin-top: 50px;
+    margin-top: 10px;
     text-align: center;
 }
 
@@ -54,7 +54,8 @@ a {
     width: 24px;
     display: block;
     margin: 0 auto;
-    margin-top: 100px;
+    margin-top: 60px;
+    margin-bottom: 40px;
 }
 
 .div-bottom {
@@ -129,6 +130,7 @@ a {
         left: 40%;
         margin-top: -10%;
         border: #FFFFFF solid 4px;
+
     }
 
     /*内容部分右浮动*/
@@ -165,6 +167,11 @@ a {
         left: 35%;
         margin-top: -14%;
         border: #FFFFFF solid 4px;
+        transition: all 0.6s;
+    }
+
+    .img-avatar :hover {
+        transform: scale(2.2);
     }
 
     /*内容部分右浮动*/
@@ -172,6 +179,7 @@ a {
         width: 74%;
         float: right;
         height: auto;
+        min-height: 1080px;
         margin-right: 0.5%;
         overflow: hidden;
     }

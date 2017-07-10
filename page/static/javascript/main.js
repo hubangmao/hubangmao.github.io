@@ -12,6 +12,6 @@ $(document).ready(function () {
     $(".item").fadeOut(0);
     setTimeout(function () {
         $(".item").fadeIn(1000);
-    }, 1000);
+    }, 500);
 
 });
