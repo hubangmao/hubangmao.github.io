@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0056f421-409a-4944-b634-44d2cb7e131d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/page/android.html" beforeDir="false" afterPath="$PROJECT_DIR$/page/android.html" afterDir="false" />
-    </list>
+    <list default="true" id="0056f421-409a-4944-b634-44d2cb7e131d" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,8 +17,8 @@
       <file leaf-file-name="android.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/page/android.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="479">
-              <caret line="214" column="67" lean-forward="true" selection-start-line="214" selection-start-column="67" selection-end-line="214" selection-end-column="67" />
+            <state relative-caret-position="509">
+              <caret line="215" lean-forward="true" selection-start-line="215" selection-end-line="215" />
               <folding>
                 <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
                 <element signature="n#img#1;n#body#0;n#html#0;n#!!top" />
@@ -340,12 +338,12 @@
       <workItem from="1499671383291" duration="62000" />
       <workItem from="1519873185184" duration="1953000" />
       <workItem from="1519896527198" duration="375000" />
-      <workItem from="1529377744527" duration="4907000" />
+      <workItem from="1529377744527" duration="5043000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67910000" />
+    <option name="totallyTimeSpent" value="68046000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -536,8 +534,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/page/android.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="479">
-          <caret line="214" column="67" lean-forward="true" selection-start-line="214" selection-start-column="67" selection-end-line="214" selection-end-column="67" />
+        <state relative-caret-position="509">
+          <caret line="215" lean-forward="true" selection-start-line="215" selection-end-line="215" />
           <folding>
             <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
             <element signature="n#img#1;n#body#0;n#html#0;n#!!top" />
