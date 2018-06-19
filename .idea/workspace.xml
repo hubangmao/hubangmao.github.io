@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0056f421-409a-4944-b634-44d2cb7e131d" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/page/android.html" beforeDir="false" afterPath="$PROJECT_DIR$/page/android.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/page/static/images/android/ui-3-0.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/page/static/images/android/ui-3-0.jpg" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,8 +20,8 @@
       <file leaf-file-name="android.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/page/android.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="509">
-              <caret line="215" lean-forward="true" selection-start-line="215" selection-end-line="215" />
+            <state relative-caret-position="420">
+              <caret line="213" column="68" lean-forward="true" selection-start-line="213" selection-start-column="68" selection-end-line="213" selection-end-column="68" />
               <folding>
                 <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
                 <element signature="n#img#1;n#body#0;n#html#0;n#!!top" />
@@ -65,12 +66,14 @@
       <find>static/images/android/</find>
       <find>发布时间:</find>
       <find>英文代号:</find>
+      <find>version</find>
     </findStrings>
     <replaceStrings>
       <replace>page\static\lib\hamster.swf</replace>
       <replace>,</replace>
       <replace>'</replace>
       <replace>2</replace>
+      <replace>androidVersion</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -115,7 +118,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="326" />
     <option name="y" value="14" />
     <option name="width" value="1936" />
@@ -339,15 +342,15 @@
       <workItem from="1499671383291" duration="62000" />
       <workItem from="1519873185184" duration="1953000" />
       <workItem from="1519896527198" duration="375000" />
-      <workItem from="1529377744527" duration="5713000" />
+      <workItem from="1529377744527" duration="6475000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68716000" />
+    <option name="totallyTimeSpent" value="69478000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -363,7 +366,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.019313306" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22585838" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.0125" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -393,9 +396,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/img/linkedin.png" />
-    <entry file="file://$PROJECT_DIR$/404.html" />
-    <entry file="file://$PROJECT_DIR$/js/MathJax.js" />
     <entry file="file://$PROJECT_DIR$/css/style.css" />
     <entry file="file://$PROJECT_DIR$/js/main.js" />
     <entry file="file://$PROJECT_DIR$/img/scrollbar_arrow.png" />
@@ -533,10 +533,19 @@
     <entry file="file://$PROJECT_DIR$/page/static/images/android/ui-8-0.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/page/static/images/android/ui-4-4.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page/static/images/android/ui-3-0.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page/static/images/android/android-logo.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/page/android.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="509">
-          <caret line="215" lean-forward="true" selection-start-line="215" selection-end-line="215" />
+        <state relative-caret-position="420">
+          <caret line="213" column="68" lean-forward="true" selection-start-line="213" selection-start-column="68" selection-end-line="213" selection-end-column="68" />
           <folding>
             <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
             <element signature="n#img#1;n#body#0;n#html#0;n#!!top" />
