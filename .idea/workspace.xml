@@ -2,13 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0056f421-409a-4944-b634-44d2cb7e131d" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/jQuery.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/page/static/images/android/ui-8-0.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/hubangmao.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/hubangmao.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/page/android.html" beforeDir="false" afterPath="$PROJECT_DIR$/page/android.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,8 +19,8 @@
       <file leaf-file-name="android.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/page/android.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="546">
-              <caret line="208" column="8" selection-start-line="208" selection-start-column="8" selection-end-line="208" selection-end-column="8" />
+            <state relative-caret-position="479">
+              <caret line="214" column="67" lean-forward="true" selection-start-line="214" selection-start-column="67" selection-end-line="214" selection-end-column="67" />
               <folding>
                 <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
                 <element signature="n#img#1;n#body#0;n#html#0;n#!!top" />
@@ -40,54 +33,6 @@
                 <element signature="n#style#0;n#span#0;n#p#3;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#2;n#!!top" expanded="true" />
                 <element signature="n#div#3;n#body#0;n#html#0;n#!!top" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ui-8-0.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/page/static/images/android/ui-8-0.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file leaf-file-name="ui-7-1.jpg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/page/static/images/android/ui-7-1.jpg">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1253">
-              <caret line="55" column="64" selection-start-line="55" selection-start-column="64" selection-end-line="55" selection-end-column="64" />
-              <folding>
-                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#object#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#1;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="hamster.swf" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/page/static/lib/hamster.swf">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/page/static/css/styles.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1800">
-              <caret line="62" column="16" selection-start-line="62" selection-start-column="12" selection-end-line="62" selection-end-column="16" />
-              <folding>
-                <element signature="e#1406#1429#0" />
               </folding>
             </state>
           </provider>
@@ -115,7 +60,7 @@
       <find>lib</find>
       <find>&quot;</find>
       <find>1</find>
-      <find />
+      <find>title: &quot;&quot;,</find>
       <find>&quot;static/images/android/ui-1-6-4.jpg&quot;</find>
       <find>ui-8-0.jpg</find>
       <find>static/images/android/</find>
@@ -171,7 +116,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="326" />
     <option name="y" value="14" />
     <option name="width" value="1936" />
@@ -395,12 +340,12 @@
       <workItem from="1499671383291" duration="62000" />
       <workItem from="1519873185184" duration="1953000" />
       <workItem from="1519896527198" duration="375000" />
-      <workItem from="1529377744527" duration="4270000" />
+      <workItem from="1529377744527" duration="4907000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67273000" />
+    <option name="totallyTimeSpent" value="67910000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -591,8 +536,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/page/android.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="208" column="8" selection-start-line="208" selection-start-column="8" selection-end-line="208" selection-end-column="8" />
+        <state relative-caret-position="479">
+          <caret line="214" column="67" lean-forward="true" selection-start-line="214" selection-start-column="67" selection-end-line="214" selection-end-column="67" />
           <folding>
             <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
             <element signature="n#img#1;n#body#0;n#html#0;n#!!top" />
