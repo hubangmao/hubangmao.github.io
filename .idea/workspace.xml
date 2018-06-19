@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0056f421-409a-4944-b634-44d2cb7e131d" name="Default" comment="" />
+    <list default="true" id="0056f421-409a-4944-b634-44d2cb7e131d" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/page/android.html" beforeDir="false" afterPath="$PROJECT_DIR$/page/android.html" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,11 +26,10 @@
                 <element signature="n#img#1;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
-                <element signature="e#6888#7055#0" />
+                <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#2;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#3;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#p#3;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#p#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#2;n#!!top" expanded="true" />
                 <element signature="n#div#3;n#body#0;n#html#0;n#!!top" />
               </folding>
@@ -338,12 +339,12 @@
       <workItem from="1499671383291" duration="62000" />
       <workItem from="1519873185184" duration="1953000" />
       <workItem from="1519896527198" duration="375000" />
-      <workItem from="1529377744527" duration="5043000" />
+      <workItem from="1529377744527" duration="5401000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68046000" />
+    <option name="totallyTimeSpent" value="68404000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -541,11 +542,10 @@
             <element signature="n#img#1;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
-            <element signature="e#6888#7055#0" />
+            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#3;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#p#3;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#p#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#2;n#!!top" expanded="true" />
             <element signature="n#div#3;n#body#0;n#html#0;n#!!top" />
           </folding>
