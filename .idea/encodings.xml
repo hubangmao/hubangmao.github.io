@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/page/static/images/android/ui-9-0.jpg" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/page/static/images/icon-ha.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/page/static/lib/bootstrap-theme.css" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/page/static/lib/bootstrap.css" charset="UTF-8" />

@@ -79,128 +79,98 @@
 <script>
 
     function array() {
-        var versionArr = [];
-        versionArr[0] = {
-            androidVersion: "1.0 1",
-            time: "2008.9",
-            CodeName: "发条机器人",
-            EnglishName: "robot",
-            img: "ui-1-1-2.jpg"
-        };
-
-        versionArr[1] = {
-            androidVersion: "1.5 3",
-            time: "2009.4.30",
-            CodeName: "纸杯蛋糕",
-            EnglishName: "Cupcake",
-            img: "ui-1-5-3.jpg"
-        };
-
-        versionArr[2] = {
-            androidVersion: "1.6 4",
-            time: "2009.9.15",
-            CodeName: "甜甜圈",
-            EnglishName: "Donut",
-            img: "ui-1-6-4.jpg"
-        };
-
-        versionArr[3] = {
-            androidVersion: "2.0 5",
-            time: "2009.10.26",
-            CodeName: "松饼",
-            EnglishName: "Eclair",
-            img: "ui-2-0-5.jpg"
-        };
-
-        versionArr[4] = {
-            androidVersion: "2.1 ",
-            time: "2010.5.20",
-            CodeName: "冻酸奶",
-            EnglishName: "Froyo",
-            img: "ui-2-1.jpg"
-        };
-
-        versionArr[5] = {
-            androidVersion: "2.3 9",
-            time: "2010.12.7",
-            CodeName: "姜饼",
-            EnglishName: "Gingerbread",
-            img: "ui-2-3-9.jpg"
-        };
-
-        versionArr[6] = {
-            androidVersion: "3.0 11",
-            time: "2011.2.2",
-            CodeName: "蜂巢",
-            EnglishName: "Honeycomb",
-            img: "ui-3-0.jpg"
-        };
-
-        versionArr[7] = {
-            androidVersion: "4.0 14",
-            time: "2011.10.19",
-            CodeName: "冰激凌三明治",
-            EnglishName: "Ice Cream Sandwich",
-            img: "ui-4-1-14.jpg"
-        };
-
-        versionArr[8] = {
-            androidVersion: "4.1 16",
-            time: "2012.6.28",
-            CodeName: "果冻豆",
-            EnglishName: "Jelly Bean",
-            img: "ui-4-1-16.jpg"
-        };
-
-        versionArr[9] = {
-            androidVersion: "4.4 19",
-            time: "2013.9.4",
-            CodeName: "奇巧",
-            EnglishName: "KitKat",
-            img: "ui-4-4.jpg"
-        };
-
-        versionArr[10] = {
-            androidVersion: "5.1 22",
-            time: "2015.3.10",
-            CodeName: "棒棒糖",
-            EnglishName: "Lollipop",
-            img: "ui-5-1.jpg"
-        };
-
-        versionArr[11] = {
-            androidVersion: "6.0 23",
-            time: "2015.5.28",
-            CodeName: "棉花糖",
-            EnglishName: "Marshmallow",
-            img: "ui-6-0.jpg"
-        };
-
-        versionArr[12] = {
-            androidVersion: "7.0",
-            time: "2016.8.22",
-            CodeName: "牛轧糖",
-            EnglishName: "Nougat",
-            img: "ui-7-1.jpg"
-        };
-
-        versionArr[13] = {
-            androidVersion: "8.0",
-            time: "2017.8.21",
-            CodeName: "奥利奥",
-            EnglishName: "Oreo",
-            img: "ui-8-0.png"
-        };
-
-        /*versionArr[13] = {
-            androidVersion: "9.0",
-            time: "2017.8.21",
-            CodeName: "",
-            EnglishName: "",
-            img: ""
-        };*/
-
-        return versionArr;
+        return [
+            {
+                androidVersion: "1.0 1",
+                time: "2008.9",
+                CodeName: "发条机器人",
+                EnglishName: "robot",
+                img: "ui-1-1-2.jpg"
+            }, {
+                androidVersion: "1.5 3",
+                time: "2009.4.30",
+                CodeName: "纸杯蛋糕",
+                EnglishName: "Cupcake",
+                img: "ui-1-5-3.jpg"
+            }, {
+                androidVersion: "1.6 4",
+                time: "2009.9.15",
+                CodeName: "甜甜圈",
+                EnglishName: "Donut",
+                img: "ui-1-6-4.jpg"
+            }, {
+                androidVersion: "2.0 5",
+                time: "2009.10.26",
+                CodeName: "松饼",
+                EnglishName: "Eclair",
+                img: "ui-2-0-5.jpg"
+            }, {
+                androidVersion: "2.1 ",
+                time: "2010.5.20",
+                CodeName: "冻酸奶",
+                EnglishName: "Froyo",
+                img: "ui-2-1.jpg"
+            }, {
+                androidVersion: "2.3 9",
+                time: "2010.12.7",
+                CodeName: "姜饼",
+                EnglishName: "Gingerbread",
+                img: "ui-2-3-9.jpg"
+            }, {
+                androidVersion: "3.0 11",
+                time: "2011.2.2",
+                CodeName: "蜂巢",
+                EnglishName: "Honeycomb",
+                img: "ui-3-0.jpg"
+            }, {
+                androidVersion: "4.0 14",
+                time: "2011.10.19",
+                CodeName: "冰激凌三明治",
+                EnglishName: "Ice Cream Sandwich",
+                img: "ui-4-1-14.jpg"
+            }, {
+                androidVersion: "4.1 16",
+                time: "2012.6.28",
+                CodeName: "果冻豆",
+                EnglishName: "Jelly Bean",
+                img: "ui-4-1-16.jpg"
+            }, {
+                androidVersion: "4.4 19",
+                time: "2013.9.4",
+                CodeName: "奇巧",
+                EnglishName: "KitKat",
+                img: "ui-4-4.jpg"
+            }, {
+                androidVersion: "5.1 22",
+                time: "2015.3.10",
+                CodeName: "棒棒糖",
+                EnglishName: "Lollipop",
+                img: "ui-5-1.jpg"
+            }, {
+                androidVersion: "6.0 23",
+                time: "2015.5.28",
+                CodeName: "棉花糖",
+                EnglishName: "Marshmallow",
+                img: "ui-6-0.jpg"
+            }, {
+                androidVersion: "7.0",
+                time: "2016.8.22",
+                CodeName: "牛轧糖",
+                EnglishName: "Nougat",
+                img: "ui-7-1.jpg"
+            }, {
+                androidVersion: "8.0",
+                time: "2017.8.21",
+                CodeName: "奥利奥",
+                EnglishName: "Oreo",
+                img: "ui-8-0.png"
+            }, {
+                androidVersion: "9.0",
+                time: "2018.8.7-上午",
+                CodeName: "馅饼  开心果雪糕",
+                EnglishName: "Pistachio Ice Cream",
+                img: "ui-9-0.jpg"
+            }];
     }
 
     var arr = array();
